@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 import Search from "./pages/Search";
 import Saved from "./pages/Saved";
-import Navbar from "./components/navbar";
+import Navbar from "./components/navbar/Navbar";
 
 function App() {
   return (
