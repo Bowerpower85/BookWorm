@@ -22,7 +22,7 @@ if (process.env.NODE_ENV === "production") {
 
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/savedBooks";
 
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+mongoose.connect(MONGODB_URI, { useUnifiedTopology: true, useNewUrlParser: true });
 
 // Send every request to the React app
 // Define any API routes before this runs
