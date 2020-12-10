@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import $ from "jquery";
 import API from "../utils/google-books"
-import { Input, FormBtn } from "../components/search-box";
-import Results from "../components/results/results";
+import { Input, FormBtn } from "../components/search-box/Search-box";
+import Results from "../components/results/Results";
 
 class Search extends Component{
     state = {

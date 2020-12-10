@@ -22,7 +22,29 @@ if (process.env.NODE_ENV === "production") {
 
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/bookworm";
 
-mongoose.connect(MONGODB_URI, { useUnifiedTopology: true, useNewUrlParser: true });
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+
+// API routes
+
+app.get("/api/books", (req,res) => {
+  db.Book.find({},function(err, docs) {
+    if (!err){ 
+        res.json(docs)
+    } else {throw err;}
+});
+})
+
+app.post("/api/books/post",(req,res) =>{
+  console.log("the route is hit****")
+  db.Book.create(req.body)
+  .catch((err)=>{res.json(err)})
+})
+
+app.delete("/api/books/:id",(req,res)=>{
+  db.Book.deleteOne({_id: req.params.id}).then((err,data)=>{
+    if(err){res.json(err)};
+  })
+})
 
 // Send every request to the React app
 // Define any API routes before this runs
