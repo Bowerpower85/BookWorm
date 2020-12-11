@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from 'react-router-dom'
+import "./style.css";
 
 function Results(props) {
     return (
@@ -7,7 +7,7 @@ function Results(props) {
             <div className="card">
                 <div className="row">
                     <div className="col-2">
-                        <img src={props.image} className="card-img" alt={props.title} style={{ width: "150px" }} />
+                        <img src={props.image} className="card-img" alt={props.title} style={{ width: "125px" }} />
                     </div>
                     <div className="col-6">
                         <h5 className="card-header">{props.title}</h5>

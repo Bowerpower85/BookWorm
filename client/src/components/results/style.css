@@ -1,0 +1,25 @@
+.card-header {
+    float: right;
+    border-radius: yellow;
+    margin: 25px;
+    padding: 10px;
+}
+
+.card-body {
+    align-content: center;
+    width: 145%;
+    border: 3px solid rgb(20, 20, 82);
+    margin: 25px;
+    padding: 10px;
+    
+
+}
+
+.card-img {
+    float: left;
+    border: black 2px solid;
+}
+
+.row {
+    background-color: rgb(245, 12, 12);
+}
