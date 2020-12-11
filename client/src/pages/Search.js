@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import $ from "jquery";
 import API from "../utils/google-books"
-import { Input, FormBtn } from "../components/search-box/Search-box";
+import { Input, FormBtn } from "../components/search-box/index";
 import Results from "../components/results/Results";
 
 class Search extends Component{
@@ -33,6 +33,7 @@ class Search extends Component{
             link: e.target.getAttribute("data-link"),
             image: e.target.getAttribute("data-image")
         })
+        
         .catch(err => console.log(err));
     }
 

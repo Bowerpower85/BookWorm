@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const logger = require("morgan");
 
 // Requirer models
-const db = require("./models")
+const db = require("./client/models/");
 
 // Morgan for logging requests
 app.use(logger("dev"));
@@ -20,9 +20,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/bookworm";
-
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Book", { useNewUrlParser: true,  useUnifiedTopology: true });
 
 // API routes
 
