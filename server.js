@@ -24,7 +24,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/Book", { useNew
 
 // API routes
 
-app.get("/api/book", (req,res) => {
+app.get("/api/books", (req,res) => {
   db.Book.find({},function(err, docs) {
     if (!err){ 
         res.json(docs)
@@ -32,13 +32,13 @@ app.get("/api/book", (req,res) => {
 });
 })
 
-app.post("/api/book/post",(req,res) =>{
+app.post("/api/books/post",(req,res) =>{
   console.log("the route is hit****")
   db.Book.create(req.body)
   .catch((err)=>{res.json(err)})
 })
 
-app.delete("/api/book/:id",(req,res)=>{
+app.delete("/api/books/:id",(req,res)=>{
   db.Book.deleteOne({_id: req.params.id}).then((err,data)=>{
     if(err){res.json(err)};
   })
